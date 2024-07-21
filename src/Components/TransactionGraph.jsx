@@ -56,7 +56,6 @@ const TransactionGraph = () => {
   return (
     <div>
      <Line data={chartData} />
-      )}
     </div>
   );
 };
