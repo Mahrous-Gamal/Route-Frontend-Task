@@ -3,6 +3,21 @@
 body {
   font-family: "Cairo", sans-serif !important;
 }
+
+ /* Scrollbar */
+ ::-webkit-scrollbar {
+  width:5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color:#318754;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 15px;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

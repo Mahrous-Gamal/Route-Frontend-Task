@@ -67,7 +67,7 @@ const CustomerTable = ({ onSelectCustomer }) => {
           />
         </div>
       </div>
-      <table className="w-100">
+      <table className="w-100 table table-striped table-hover ">
         <thead >
           <tr className="d-flex justify-content-between text-center" >
             <th className="text-center w-50 text-success">Customer Name</th>
@@ -87,8 +87,10 @@ const CustomerTable = ({ onSelectCustomer }) => {
                   .filter((t) => t.customer_id === customer.id)
                   .reduce((sum, t) => sum + t.amount, 5000)
                 } */}
-                {take(customer.id)}
+                {/* {take(customer.id)} */}
               </td>
+              <td className="text-center w-50">{customer.id}</td>
+
 
             </tr>
           ))}

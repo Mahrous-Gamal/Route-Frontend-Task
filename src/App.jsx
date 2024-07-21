@@ -19,10 +19,10 @@ const App = () => {
   };
 
   return (
-    <div className="customer-transactions my-5 p-3">
+    <div className="customer-transactions my-3 p-3">
       <div className="route">
         <div className="image-route">
-        <img className="w-100" src={route} alt="" />
+          <img className="w-100" src={route} alt="" />
         </div>
       </div>
       <h1 className="text-center my-3">Customer Transactions</h1>
