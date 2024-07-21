@@ -7,15 +7,16 @@ const CustomerTable = ({ onSelectCustomer }) => {
   const [filteredCustomers, setFilteredCustomers] = useState([]);
   const [filter, setFilter] = useState({ name: "", amount: "" });
 
-
-
-  function take(id) {
-
-    let customerTransactions = transactions.map((t) => t.customer_id == id)
-    console.log(customerTransactions);
-    return customerTransactions.amount;
-
+  function getTotalTransactionAmount(customerId) {
+    let totalAmount = 0;
+    transactions.forEach((transaction) => {
+      if (transaction.customer_id == customerId) {
+        totalAmount += transaction.amount;
+      }
+    });
+    return totalAmount;
   }
+
   useEffect(() => {
     const fetchData = async () => {
       const customerResponse = await axios.get(
@@ -32,11 +33,17 @@ const CustomerTable = ({ onSelectCustomer }) => {
 
   useEffect(() => {
     setFilteredCustomers(
-      customers.filter((customer) =>
-        customer.name.toLowerCase().includes(filter.name.toLowerCase())
-      )
+      customers.filter((customer) => {
+        const nameMatch = customer.name
+          .toLowerCase()
+          .includes(filter.name.toLowerCase());
+        const amountMatch =
+          filter.amount === "" ||
+          getTotalTransactionAmount(customer.id) == parseFloat(filter.amount);
+        return nameMatch && amountMatch;
+      })
     );
-  }, [filter.name, customers]);
+  }, [filter, customers, transactions]);
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -67,9 +74,9 @@ const CustomerTable = ({ onSelectCustomer }) => {
           />
         </div>
       </div>
-      <table className="w-100 table table-striped table-hover ">
-        <thead >
-          <tr className="d-flex justify-content-between text-center" >
+      <table className="w-100 table table-striped">
+        <thead>
+          <tr className="d-flex justify-content-between text-center">
             <th className="text-center w-50 text-success">Customer Name</th>
             <th className="text-center w-50 text-danger">Transaction Amount</th>
           </tr>
@@ -83,15 +90,8 @@ const CustomerTable = ({ onSelectCustomer }) => {
             >
               <td className="text-center w-50">{customer.name}</td>
               <td className="text-center w-50">
-                {/* {transactions
-                  .filter((t) => t.customer_id === customer.id)
-                  .reduce((sum, t) => sum + t.amount, 5000)
-                } */}
-                {/* {take(customer.id)} */}
+                {getTotalTransactionAmount(customer.id)}
               </td>
-              <td className="text-center w-50">{customer.id}</td>
-
-
             </tr>
           ))}
         </tbody>

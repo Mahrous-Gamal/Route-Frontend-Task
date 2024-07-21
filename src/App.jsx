@@ -4,7 +4,6 @@ import CustomerTable from "./Components/CustomerTable";
 import TransactionGraph from "./Components/TransactionGraph";
 import route from "../src/Assets/Images/route.jpeg";
 
-
 const App = () => {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [transactions, setTransactions] = useState([]);
@@ -27,7 +26,7 @@ const App = () => {
       </div>
       <h1 className="text-center my-3">Customer Transactions</h1>
       <CustomerTable onSelectCustomer={handleSelectCustomer} />
-      {selectedCustomer && <TransactionGraph transactions={transactions} />}
+      {<TransactionGraph transactions={transactions} />}
 
     </div>
   );
