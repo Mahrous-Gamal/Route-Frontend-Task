@@ -55,10 +55,7 @@ const TransactionGraph = () => {
 
   return (
     <div>
-      {chartData.labels.length > 0 ? (
-        <Line data={chartData} />
-      ) : (
-        <p>No data available</p>
+     <Line data={chartData} />
       )}
     </div>
   );
