@@ -1,4 +1,4 @@
-# SEF Academy Traning
+# Route Frontend Task
 - Responsive Website Using React-bootstrap, Redux Toolkit, React.
 - Developed first with the Mobile First methodology, then for desktop.
 - Compatible with all mobile devices and with a beautiful and pleasant user interface.
@@ -18,8 +18,8 @@ Before you begin, ensure you have met the following requirements:
 To get started with the website, clone the repo:
 
 ```
-$ git clone https://github.com/Mahrous-Gamal/SEF-Academy-Traning.git
-$ cd SEF-Academy-Traning
+$ git clone https://github.com/Mahrous-Gamal/Route-Frontend-Task.git
+$ cd Route-Frontend-Task
 ```
 
 Then install the dependencies:
