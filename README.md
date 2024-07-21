@@ -1,33 +1,41 @@
-# Customer Transactions App
+# SEF Academy Traning
+- Responsive Website Using React-bootstrap, Redux Toolkit, React.
+- Developed first with the Mobile First methodology, then for desktop.
+- Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
-## Description
+## [Website Demo]()
 
-The Customer Transactions App is a React-based web application that allows users to view and filter customer data and their transaction amounts. The application uses a mock JSON server to provide data, simulating a backend service. Users can filter customers by their name and view their total transaction amounts, which are dynamically calculated from the provided transaction data.
 
-## Features
 
-- **Customer Listing**: Displays a list of customers.
-- **Transaction Amount Calculation**: Calculates and displays the total transaction amount for each customer.
-- **Filtering**: Allows filtering customers by name and minimum transaction amount.
+### Prerequisites
 
-## Prerequisites
+Before you begin, ensure you have met the following requirements:
 
-- [Node.js](https://nodejs.org/) (which includes npm)
-- [JSON Server](https://github.com/typicode/json-server) (for serving the mock data)
+* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
 
-## Setup
+### Getting Started
 
-```bash
-npm install -g json-server
+To get started with the website, clone the repo:
 
 ```
-
-```bash
-json-server --watch db.json --port 5000
-
+$ git clone https://github.com/Mahrous-Gamal/SEF-Academy-Traning.git
+$ cd SEF-Academy-Traning
 ```
 
-```bash
-npm start
+Then install the dependencies:
 
 ```
+$ npm install
+```
+
+### Running the App
+
+To run the app, start the Expo development server:
+
+```
+$ npm start
+```
+
+### Contact
+
+If you want to contact with me you can reach me at [Linkedin](https://www.linkedin.com/in/mahrous-gamal-044693218/).
