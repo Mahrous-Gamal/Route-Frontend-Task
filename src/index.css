@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+body {
+  font-family: "Cairo", sans-serif;
+}
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -12,5 +17,30 @@ input[type="number"] {
 .customer-transactions{
     width: fit-content;
     margin: auto;
+}
+.route{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 110px;
+  height: 110px;
+  border: 2px solid #dc3545;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.image-route{
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  border: 2px solid #318754;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
