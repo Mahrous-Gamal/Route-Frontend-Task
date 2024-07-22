@@ -26,7 +26,8 @@ const App = () => {
       </div>
       <h1 className="text-center my-3">Customer Transactions</h1>
       <CustomerTable onSelectCustomer={handleSelectCustomer} />
-      {<TransactionGraph transactions={transactions} />}
+
+    
 
     </div>
   );

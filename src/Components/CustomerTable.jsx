@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import TransactionGraph from './TransactionGraph';
 
 const CustomerTable = ({ onSelectCustomer }) => {
   const [customers, setCustomers] = useState([]);
   const [transactions, setTransactions] = useState([]);
   const [filteredCustomers, setFilteredCustomers] = useState([]);
   const [filter, setFilter] = useState({ name: "", amount: "" });
+  const [filteredTransactions, setFilteredTransactions] = useState([]);
 
   function getTotalTransactionAmount(customerId) {
     let totalAmount = 0;
@@ -44,6 +46,17 @@ const CustomerTable = ({ onSelectCustomer }) => {
       })
     );
   }, [filter, customers, transactions]);
+
+  useEffect(() => {
+    setFilteredTransactions(
+      transactions.filter((transaction) =>
+        filteredCustomers.some((customer) => customer.id == transaction.customer_id)
+      )
+
+    );
+    console.log(filteredTransactions);
+    
+  }, [filteredCustomers, transactions]);
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -96,6 +109,7 @@ const CustomerTable = ({ onSelectCustomer }) => {
           ))}
         </tbody>
       </table>
+      {<TransactionGraph transactions={filteredTransactions} />}
     </div>
   );
 };
