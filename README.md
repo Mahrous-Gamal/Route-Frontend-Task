@@ -24,13 +24,20 @@ $ cd Route-Frontend-Task
 
 Then install the dependencies:
 
+
 ```
 $ npm install
 ```
 
+
+
 ### Running the App
 
 To run the app, start the Expo development server:
+
+```
+$ json-server --watch db.json --port 5000
+```
 
 ```
 $ npm start
